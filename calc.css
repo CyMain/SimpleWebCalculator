@@ -1,1 +1,14 @@
+.calc-body{
+  display: flex;
+  flex-direction: column;
+}
 
+.screen{
+background-color: green;
+}
+
+.buttons{
+  display: grid;
+  grid-template-columns: 8vw 8vw 8vw;
+
+}
