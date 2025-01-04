@@ -1,14 +1,26 @@
 .calc-body{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-color: rgb(3, 43, 3);
+  width:40vw;
+  height:50vh;
+  padding: 2vw;
+  row-gap: 7vh;
+  border-radius: 2vh;
 }
 
 .screen{
-background-color: green;
+background-color: rgb(116, 197, 116);
+width: 100%;
+height: 40%;
 }
 
 .buttons{
   display: grid;
-  grid-template-columns: 8vw 8vw 8vw;
+  grid-template-columns: 9vw 9vw 9vw 12vw;
+}
 
+.buttons > *{
+  height: 5vh;
 }
