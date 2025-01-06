@@ -36,6 +36,10 @@ flex-direction: column;
   display: inline-block;
 }
 
+.clear-button{
+  width:100%;
+}
+
 .buttons{
   display: grid;
   grid-template-columns: 8.5vw 8.5vw 8.5vw 10vw;
