@@ -3,10 +3,10 @@ let equ = localStorage.getItem('equation')||` `;
 const buttons = [1, 2, 3, '+', 4, 5, 6, '-', 7, 8, 9, '*', 0, '.', '/', '='];
 
 buttons.forEach((button)=>{
-  if(button == "="){
+  if(button == '='){
     document.querySelector('.buttons').innerHTML += `
     <button onclick="
-          solveEqu(${button});
+          solveEqu('${button}');
           ">
           ${button}
     </button>
@@ -14,7 +14,7 @@ buttons.forEach((button)=>{
   } else{
     document.querySelector('.buttons').innerHTML += `
     <button onclick="
-          addToEqu(${button});
+          addToEqu('${button}');
           ">
           ${button}
     </button>
@@ -25,12 +25,13 @@ buttons.forEach((button)=>{
 console.log(document.querySelector('.buttons').innerHTML);
 
 function addToEqu(value){
-  if(value == "+"||value == "-"||value == "*"||value == "/"){
-    equ+=` ${value} `
+  if(value == '+'||value == '-'||value == '*'||value == '/'){
+    equ+=` ${value} `;
   } else{
     equ+=`${value}`;
-    if(equ[equ.length - 3] == "+" || equ[equ.length - 3] == "*" || equ[equ.length - 3] == "/" || equ[equ.length - 3] == "-"){
+    if(equ[equ.length - 3] == '+' || equ[equ.length - 3] == '*' || equ[equ.length - 3] == '/' || equ[equ.length - 3] == '-'){
       document.querySelector('.output').innerHTML = eval(equ);
+      document.querySelector('.output').classList.add('transparent');
     }
   }
   console.log(equ);
@@ -41,12 +42,12 @@ function solveEqu(){
   try {
     document.querySelector('.output').innerHTML = eval(equ);
     console.log(eval(equ)); 
+    document.querySelector('.output').classList.remove('transparent');
   } catch (error) {
     document.querySelector('.output').innerHTML = 'please complete your expression.';
     console.log('terrible equ~');
   }
-  console.log(equ.length);
-  console.log(equ[3]);
+  
 }
 
 function clearEqu(){

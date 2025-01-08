@@ -7,6 +7,10 @@
   font-weight: bold;
 }
 
+.transparent{
+  opacity: 0.2;
+}
+
 .calc-body{
   margin: 25vh auto;
   display: flex;
@@ -21,20 +25,31 @@
 }
 
 .screen{
+  position: relative;
   border-radius: 2vh 2vh 0 0;
-background-color: rgb(116, 197, 116);
-width: 100%;
-height: 40%;
-display: flex;
-flex-direction: column;
+  background-color: rgb(116, 197, 116);
+  width: 100%;
+  height: 40%;
+  display: flex;
+  padding: 1vw;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .screen .input{
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .screen .input .curr-eq{
   display: inline-block;
+}
+
+.screen .input .cursor-bar{
+  display:inline-block;
+  background-color: blue;
+  height: 1em;
+  width:1em;
 }
 
 .clear-button{
@@ -48,4 +63,12 @@ flex-direction: column;
 
 .buttons > *{
   height: 6vh;
+}
+
+.output{
+  position: absolute;
+  bottom: 0;
+  left: 1vw;
+  right: 1vw;
+  text-align: right;
 }
