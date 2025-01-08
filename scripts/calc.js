@@ -1,5 +1,29 @@
 let equ = localStorage.getItem('equation')||` `;
 
+const buttons = [1, 2, 3, '+', 4, 5, 6, '-', 7, 8, 9, '*', 0, '.', '/', '='];
+
+buttons.forEach((button)=>{
+  if(button == "="){
+    document.querySelector('.buttons').innerHTML += `
+    <button onclick="
+          solveEqu(${button});
+          ">
+          ${button}
+    </button>
+  `;
+  } else{
+    document.querySelector('.buttons').innerHTML += `
+    <button onclick="
+          addToEqu(${button});
+          ">
+          ${button}
+    </button>
+  `;
+  }
+})
+
+console.log(document.querySelector('.buttons').innerHTML);
+
 function addToEqu(value){
   if(value == "+"||value == "-"||value == "*"||value == "/"){
     equ+=` ${value} `
@@ -23,4 +47,10 @@ function solveEqu(){
   }
   console.log(equ.length);
   console.log(equ[3]);
+}
+
+function clearEqu(){
+  equ = ` `;
+  document.querySelector('.current-eq').innerHTML = '';
+  document.querySelector('.output').innerHTML = '';
 }

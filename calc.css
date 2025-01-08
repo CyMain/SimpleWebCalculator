@@ -21,6 +21,7 @@
 }
 
 .screen{
+  border-radius: 2vh 2vh 0 0;
 background-color: rgb(116, 197, 116);
 width: 100%;
 height: 40%;
