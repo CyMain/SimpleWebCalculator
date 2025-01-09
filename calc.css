@@ -12,15 +12,15 @@
 }
 
 .calc-body{
-  margin: 25vh auto;
+  margin: 22vh auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(3, 43, 3);
-  width:40vw;
-  height:50vh;
+  width:45vw;
+  height:55vh;
   padding: 2vw;
-  row-gap: 3vh;
+  row-gap: 2vh;
   border-radius: 2vh;
 }
 
@@ -47,18 +47,27 @@
 
 .screen .input .cursor-bar{
   display:inline-block;
-  background-color: blue;
+  background-color: #000;
   height: 1em;
-  width:1em;
+  width:0.5em;
+  animation: fade-repeat 3s ease-out infinite;
 }
 
 .clear-button{
   width:100%;
 }
 
+.dir-buttons{
+  height: 0;
+  width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .buttons{
   display: grid;
-  grid-template-columns: 8.5vw 8.5vw 8.5vw 10vw;
+  grid-template-columns: 10.5vw 10.5vw 10.5vw 10vw;
 }
 
 .buttons > *{
@@ -71,4 +80,18 @@
   left: 1vw;
   right: 1vw;
   text-align: right;
+}
+
+@keyframes fade-repeat{
+  0%{
+    opacity:0;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+  }
 }
