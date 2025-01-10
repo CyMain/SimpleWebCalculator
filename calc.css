@@ -19,8 +19,8 @@
   background-color: rgb(3, 43, 3);
   width:45vw;
   height:55vh;
-  padding: 2vw;
-  row-gap: 2vh;
+  padding: 1.5vh;
+  row-gap: 1vh;
   border-radius: 2vh;
 }
 
@@ -28,7 +28,7 @@
   position: relative;
   border-radius: 2vh 2vh 0 0;
   background-color: rgb(116, 197, 116);
-  width: 100%;
+  width: 42vw;
   height: 40%;
   display: flex;
   padding: 1vw;
@@ -38,7 +38,7 @@
 
 .screen .input{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:nowrap;
 }
 
 .screen .input .curr-eq{
@@ -54,15 +54,18 @@
 }
 
 .clear-button{
-  width:100%;
+  width:41vw;
 }
 
 .dir-buttons{
-  height: 0;
-  width: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: center;
+}
+
+.dir-buttons > *{
+  padding: 2vh;
+  width: 20.5vw;
 }
 
 .buttons{
