@@ -32,18 +32,22 @@ buttons.forEach((button)=>{
 console.log(document.querySelector('.buttons').innerHTML);
 
 function addToEqu(value){
-  if(isCalled == true){
-    document.querySelector('.current-eq').innerHTML = `${lastScore}`;
-    equ = ` ${lastScore}`;
-    isCalled = false;
-  }
-
   if(value == '+'||value == '-'||value == '*'||value == '/'){
+    if(isCalled == true){
+      document.querySelector('.current-eq').innerHTML = `${lastScore}`;
+      equ = ` ${lastScore}`;
+      isCalled = false;
+    }
     equ+=` ${value} `;
   } else{
+    if(isCalled == true){
+      document.querySelector('.current-eq').innerHTML = ``;
+      equ = ` `;
+      isCalled = false;
+    }
     equ+=`${value}`;
     if(eval(equ) !== ''){
-      document.querySelector('.output').innerHTML = eval(equ);
+      document.querySelector('.output').innerHTML = eval(equ) ||'improper expression.';
       document.querySelector('.output').classList.add('transparent');
     }
   }
